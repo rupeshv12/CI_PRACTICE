@@ -29,8 +29,11 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-    needs: build
+
     steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
     - name: Deploy to Production
       run: |
         python main.py
